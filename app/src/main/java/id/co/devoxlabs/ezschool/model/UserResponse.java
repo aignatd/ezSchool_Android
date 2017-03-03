@@ -34,9 +34,9 @@ public class UserResponse
   @SerializedName("Nama")
   @Expose
   private String nama;
-  @SerializedName("PhotoURL")
+  @SerializedName("Photo")
   @Expose
-  private String PhotoURL;
+  private String Photo;
 
   public String getHandphone() {
     return handphone;
@@ -102,13 +102,13 @@ public class UserResponse
     this.nama = nama;
   }
 
-  public String getPhotoURL()
+  public String getPhoto()
   {
-    return PhotoURL;
+    return Photo;
   }
 
-  public void setPhotoURL(String photoURL)
+  public void setPhoto(String photo)
   {
-    PhotoURL = photoURL;
+    Photo = photo;
   }
 }
