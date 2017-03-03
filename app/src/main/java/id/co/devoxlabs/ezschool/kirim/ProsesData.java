@@ -270,9 +270,10 @@ public class ProsesData extends AppCompatActivity
     MultipartBody.Part Namafile = MultipartBody.Part.createFormData("Photo", strNFile, rbFile);
     RequestBody rbNoHP = RequestBody.create(MediaType.parse("text/plain"), strNoHP);
     RequestBody rbKomponen = RequestBody.create(MediaType.parse("text/plain"), strKomponen);
+    RequestBody rbKodeDevice = RequestBody.create(MediaType.parse("text/plain"), fungsi.DeviceInfo(context, 0));
 
     DataService glData = BindingData();
-    final Call<UserTerima> cld = glData.UploadPhotoService(rbKomponen, rbNoHP, Namafile);
+    final Call<UserTerima> cld = glData.UploadPhotoService(rbKomponen, rbNoHP, Namafile, rbKodeDevice);
     cld.enqueue(new Callback<UserTerima>()
     {
       @Override
