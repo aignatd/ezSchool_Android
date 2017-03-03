@@ -70,6 +70,7 @@ public interface DataService
 
   @Multipart
   @POST(FixValue.UploadPhoto)
-  Call<UserTerima> UploadPhotoService(@Part("Komponen") RequestBody rbKomponen, @Part("Handphone") RequestBody rbNoHP, @Part MultipartBody.Part Photo);
+  Call<UserTerima> UploadPhotoService(@Part("Komponen") RequestBody rbKomponen, @Part("Handphone") RequestBody rbNoHP,
+                                      @Part MultipartBody.Part Photo, @Part("KodeDevice") RequestBody rbKodeDevice);
 }
 
