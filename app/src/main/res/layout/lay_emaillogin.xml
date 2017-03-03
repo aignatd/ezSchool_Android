@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context="id.co.devoxlabs.ezschool.Utama">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:id="@+id/rlHeadEmail">
+    <include layout="@layout/lay_header"/>
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:id="@+id/rlAll">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlUtama"
+        android:background="@drawable/rectroundtrans"
+        android:paddingLeft="15dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="15dp">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:text="@string/strLoginEmail"
+          android:textColor="@color/Black"
+          android:id="@+id/tvTitleLogin"
+          android:gravity="center_vertical"
+          android:layout_alignParentTop="true"
+          android:layout_alignParentRight="false"
+          android:layout_alignParentEnd="false"
+          android:layout_centerHorizontal="true"
+          android:textSize="24dp"/>
+
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="40dip"
+          android:inputType="text"
+          android:ems="10"
+          android:id="@+id/etEmailAddr"
+          android:layout_below="@id/tvTitleLogin"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentStart="true"
+          android:background="@drawable/rectroundwhitegray"
+          android:layout_marginTop="10dip"
+          android:paddingLeft="12dp"
+          android:paddingRight="12dp"
+          android:textSize="16dp"
+          android:textColor="@color/Black"
+          android:hint="@string/HintInputEmail"
+          android:drawableLeft="@drawable/ic_email_black"
+          android:drawablePadding="5dp"
+          android:singleLine="true"/>
+
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="40dip"
+          android:inputType="textPassword"
+          android:ems="10"
+          android:id="@+id/etEmailPass"
+          android:layout_below="@id/etEmailAddr"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentStart="true"
+          android:background="@drawable/rectroundwhitegray"
+          android:layout_marginTop="10dip"
+          android:paddingLeft="12dp"
+          android:paddingRight="12dp"
+          android:textSize="16dp"
+          android:textColor="@color/Black"
+          android:drawableLeft="@drawable/ic_lock_open_black"
+          android:drawablePadding="5dp"
+          android:hint="@string/HintInputPass"
+          android:singleLine="true"/>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="35dp"
+          android:id="@+id/llProses"
+          android:layout_below="@id/etEmailPass"
+          android:orientation="horizontal"
+          android:weightSum="2"
+          android:layout_marginTop="20dip"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/StrBuat"
+            android:id="@+id/btnEmailBuat"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rectroundorange"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:layout_marginRight="4dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/StrMasuk"
+            android:id="@+id/btnEmailMasuk"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rectroundorange"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:layout_marginLeft="4dp"/>
+      </LinearLayout>
+
+    </RelativeLayout>
+  </RelativeLayout>
+</RelativeLayout>

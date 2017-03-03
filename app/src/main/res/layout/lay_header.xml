@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:background="@color/PrimaryTrans">
+
+        <ImageView
+            android:layout_width="24dip"
+            android:layout_height="24dip"
+            android:id="@+id/ivBackIcon"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginTop="5dip"
+            android:layout_marginBottom="5dip"
+            android:layout_alignParentBottom="false"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:src="@drawable/ic_left_orange"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/app_name"
+            android:id="@+id/tvHeader"
+            android:textColor="@color/WarnaVersi"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/ivNextIcon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginBottom="5dip"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/backbutton"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+								android:layout_width="match_parent"
+								android:layout_height="match_parent">
+
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="@string/strNomorID"
+			android:textColor="@color/Black"
+			android:id="@+id/tvNomorID"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_marginLeft="8dp"
+			android:layout_marginTop="6dip"/>
+
+	<EditText
+			android:layout_width="match_parent"
+			android:layout_height="48dip"
+			android:inputType="text"
+			android:ems="10"
+			android:id="@+id/etNomorID"
+			android:hint="@string/HintNomorID"
+			android:layout_below="@id/tvNomorID"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:background="@drawable/rectroundwhitegray"
+			android:layout_marginTop="5dip"
+			android:paddingLeft="10dp"
+			android:paddingRight="10dp"
+			android:maxLength="25"
+			android:singleLine="true"
+			android:layout_marginLeft="8dp"
+			android:layout_marginRight="8dp"/>
+
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="@string/strNomorKey"
+			android:textColor="@color/Black"
+			android:id="@+id/tvNomorKey"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_below="@id/etNomorID"
+			android:layout_marginLeft="8dp"
+			android:layout_marginTop="6dip"/>
+
+	<EditText
+			android:layout_width="match_parent"
+			android:layout_height="48dip"
+			android:inputType="text"
+			android:ems="10"
+			android:id="@+id/etNomorKey"
+			android:hint="@string/HintNomorKey"
+			android:layout_below="@id/tvNomorKey"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:background="@drawable/rectroundwhitegray"
+			android:layout_marginTop="5dip"
+			android:paddingLeft="10dp"
+			android:paddingRight="10dp"
+			android:maxLength="25"
+			android:singleLine="true"
+			android:layout_marginLeft="8dp"
+			android:layout_marginRight="8dp"/>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/llRTRWKpos"
+			android:layout_below="@id/etNomorKey"
+			android:orientation="horizontal"
+			android:weightSum="8"
+			android:layout_marginTop="12dip"
+			android:layout_marginLeft="40dip"
+			android:layout_marginRight="40dip"
+			android:layout_marginBottom="10dip">
+
+		<Button
+				android:ems="10"
+				android:layout_width="match_parent"
+				android:layout_height="36dp"
+				android:text="@string/strBtnRubah"
+				android:id="@+id/btnPilihOK"
+				android:layout_centerHorizontal="true"
+				android:background="@drawable/rectroundorange"
+				android:textSize="16dp"
+				android:layout_weight="4"
+				android:layout_marginRight="7dip"
+				android:textColor="@color/White"/>
+
+		<Button
+				android:ems="10"
+				android:layout_width="match_parent"
+				android:layout_height="36dp"
+				android:text="@string/strBtnBatal"
+				android:id="@+id/btnPilihBatal"
+				android:layout_centerHorizontal="true"
+				android:background="@drawable/rectroundorange"
+				android:textSize="16dp"
+				android:layout_weight="4"
+				android:layout_marginLeft="7dip"
+				android:textColor="@color/White"/>
+	</LinearLayout>
+
+</RelativeLayout>

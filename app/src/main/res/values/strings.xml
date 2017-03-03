@@ -1,0 +1,160 @@
+<resources>
+	<string name="app_name">ezSchool</string>
+	<string name="TitleLogin">Login Akun</string>
+	<string name="TitleBuatAkun">Data Akun</string>
+	<string name="StrMasuk">Masuk</string>
+	<string name="StrBuat">Buat</string>
+	<string name="StrBtnKirim">Kirim</string>
+	<string name="StrGunakan">Atau Gunakan</string>
+	<string name="txtTunggu">Harap tunggu</string>
+	<string name="txtLoginEmail">Login Email</string>
+	<string name="txtBuatEmail">Buat Email</string>
+	<string name="txtProsesGoogle">Login Google</string>
+	<string name="txtProsesFacebook">Login Facebook</string>
+	<string name="txtProsesTwitter">Login Twitter</string>
+
+	<string name="StrBuatAkun">Belum ada akun ? <u>Buat akun</u></string>
+	<string name="HintInputHP">Nomor Handphone <font color='red'>*</font></string>
+	<string name="HintInputEmail">Alamat Email</string>
+
+	<string name="HintPass">Password Lama <font color='red'>*</font></string>
+	<string name="HintInputPass">Password <font color='red'>*</font></string>
+	<string name="HintVerPass">Ulangi Password <font color='red'>*</font></string>
+
+	<string name="strLoginEmail">Data Email</string>
+	<string name="txtTitlePesan">Informasi</string>
+
+	<string name="strBtnOK">OK</string>
+	<string name="strBtnBatal">Batal</string>
+	<string name="strBtnRubah">Rubah</string>
+
+	<string name="LoginEmailGagal">Login email gagal</string>
+	<string name="BuatEmailGagal">Buat email gagal</string>
+	<string name="EmailKosong">Masukan alamat email</string>
+	<string name="PasswordLama">Masukan password lama</string>
+	<string name="PasswordKosong">Masukan password</string>
+	<string name="UserLogout">User logout</string>
+	<string name="LoginGmailGagal">Login gmail gagal</string>
+
+	<string name="KoneksiGmailGagal">Koneksi gmail gagal</string>
+	<string name="AppLogout">Keluar dari aplikasi ?</string>
+	<string name="InfoTulisStorage">Akses belum diberikan kepada aplikasi</string>
+
+	<string name="facebook_app_id">1342309589123904</string>
+	<string name="fb_login_protocol_scheme">fb1342309589123904</string>
+
+	<string name="txtNoKoneksi">Gagal terhubung dengan server</string>
+	<string name="txtNoRespon">Server tidak memberikan data</string>
+	<string name="txtResponGagal">Gagal baca data dari server</string>
+	<string name="txtHPKosong">Masukan nomor handphone</string>
+	<string name="txtPassBeda">Password dan Verifikasi berbeda</string>
+	<string name="txtPassSama">Password lama dan baru sama</string>
+	<string name="txtEmailSalah">Alamat email tidak valid</string>
+
+	<string name="srtBuatAkun">Buat Akun</string>
+	<string name="srtDashboard">DASHBOARD</string>
+	<string name="srtEmailLogin">Email Login</string>
+
+	<string name="txtProsesLogin">Proses login akun</string>
+	<string name="txtProsesBuat">Proses buat akun</string>
+	<string name="txtProsesLogout">Proses logout akun</string>
+	<string name="txtProsesProfile">Proses profile user</string>
+	<string name="txtProsesGantiPass">Proses ganti password</string>
+
+	<string name="strNomorID">Nomor ID</string>
+	<string name="HintNomorID">Masukan Nomor ID</string>
+	<string name="strNomorKey">Nomor Key</string>
+	<string name="HintNomorKey">Masukan Nomor Key</string>
+
+	<string name="strFlashOff">Off</string>
+	<string name="strFlashOn">On</string>
+	<string name="txtScanQR">Untuk absen scan kode QR\npada area yang telah ditentukan</string>
+
+	<string name="txtManual"><u>Manual</u></string>
+	<string name="txtAtau">atau</string>
+	<string name="txtFinger"><u>Sidik Jari</u></string>
+	<string name="strProfile">Edit Profile</string>
+
+	<string name="txtProfileEdit">Pastikan data yang di input sudah sesuai. Data dapat dicocokan kepada pihak sekolah.</string>
+	<string name="txtNamaLengkap">Nama Lengkap <font color='red'>*</font></string>
+	<string name="txtAlamat">Alamat <font color='red'>*</font></string>
+	<string name="txtKomponen">Komponen Sekolah <font color='red'>*</font></string>
+	<string name="txtMurid">Murid</string>
+	<string name="txtGuru">Guru</string>
+	<string name="txtWali">Orang tua / Wali Murid</string>
+	<string name="txtLanjut">Selanjutnya</string>
+
+	<string name="txtProfileMain">ProfileMain</string>
+	<string name="txtProfileMurid">ProfileMurid</string>
+	<string name="txtProfileGuru">ProfileGuru</string>
+	<string name="txtProfileWali">ProfileWali</string>
+
+	<string name="txtPropinsi">Propinsi <font color='red'>*</font></string>
+	<string name="txtKecamatan">Kecamatan</string>
+	<string name="txtKota">Kota <font color='red'>*</font></string>
+	<string name="txtRT">RT</string>
+	<string name="txtRW">RW</string>
+	<string name="txtKPos">Kode Pos</string>
+	<string name="txtTempatLahir">Tempat Lahir <font color='red'>*</font></string>
+	<string name="txtTanggalLahir">Tanggal Lahir <font color='red'>*</font></string>
+	<string name="txtTglFormat">DD-MM-YYYY</string>
+	<string name="txtNoRumah">Telpon Rumah</string>
+	<string name="txtArea">Area</string>
+	<string name="txtNISN">Nomor Induk Siswa Nasional <font color='red'>*</font></string>
+	<string name="txtNIGN">Nomor Induk Guru Nasional <font color='red'>*</font></string>
+	<string name="txtSeks">Jenis Kelamin</string>
+	<string name="txtLaki2">Laki-Laki</string>
+	<string name="txtPerempuan">Perempuan</string>
+	<string name="txtSimpan">Simpan</string>
+	<string name="txtNoProfile">Update profile dahulu</string>
+
+	<string name="srtNamaLengkap">Masukan nama lengkap</string>
+	<string name="srtAlamat">Masukan alamat tinggal</string>
+	<string name="srtPropinsi">Masukan Propinsi tinggal</string>
+	<string name="srtKota">Masukan kota tinggal</string>
+	<string name="srtTmpLahir">Masukan tempat lahir</string>
+	<string name="srtTglLahir">Masukan tanggal lahir</string>
+	<string name="srtNISN">Masukan nomor induk siswa</string>
+	<string name="srtNIGN">Masukan nomor induk guru</string>
+
+	<string name="txtAgama">Agama</string>
+	<string name="txtStatus">Status</string>
+	<string name="txtPendidikan">Pendidikan Terakhir</string>
+	<string name="txtSDSMP">SD/SMP</string>
+	<string name="txtSMA">SMA</string>
+	<string name="txtD3">Diploma/D3</string>
+	<string name="txtS1">Univ/S1</string>
+	<string name="txtS2">S2</string>
+	<string name="txtJabatan">Jabatan</string>
+	<string name="txtPekerjaan">Pekerjaan</string>
+	<string name="txtKaryawan">Karyawan</string>
+	<string name="txtTNIPOLRI">TNI/POLRI</string>
+	<string name="txtProfesional">Profesional</string>
+	<string name="txtWiraswasta">Wiraswasta</string>
+	<string name="txtPensiunan">Pensiunan</string>
+
+	<string name="NeedPermiss">Open or permission camera failed</string>
+	<string name="NoCamera">Device camera tidak tersedia</string>
+	<string name="txtProsesUpload">Proses upload image</string>
+	<string name="txtProfileUpload">Profile</string>
+	<string name="txtProfilePhoto">Photo Profile</string>
+
+	<string name="txtBatalPhoto">Photo profile batal</string>
+	<string name="txtPilihPhoto">Pilih Photo</string>
+
+	<string name="mapHandphone">Handphone</string>
+	<string name="mapPassword">Password</string>
+	<string name="mapEmail">Email</string>
+	<string name="mapIdxKomponen">IdxKomponen</string>
+	<string name="mapKomponen">Komponen</string>
+	<string name="mapLoginID">LoginID</string>
+	<string name="mapNama">Nama</string>
+	<string name="mapPassbaru">Passbaru</string>
+
+	<string name="PhotoKosong">Photo tidak ada</string>
+	<string name="txtMuridBaru">Data murid baru yang sudah anda daftarkan. Update informasi terbaru akan muncul secara otomatis.</string>
+	<string name="txtHeadMuridBaru">Murid Baru</string>
+
+	<string name="txtDataWali">Data Wali</string>
+	<string name="txtDataMurid">Data Murid</string>
+</resources>

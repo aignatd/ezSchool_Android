@@ -1,0 +1,184 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+						 xmlns:tools="http://schemas.android.com/tools"
+						 android:layout_width="match_parent"
+						 android:layout_height="match_parent"
+						 tools:context="id.co.devoxlabs.ezschool.profiles.fragProfileMain">
+
+	<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/scrollView">
+
+		<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_below="@+id/rlAtas"
+				android:layout_centerHorizontal="true"
+				android:id="@+id/rlProfile"
+				android:layout_alignLeft="@+id/rlAtas"
+				android:layout_alignRight="@+id/rlAtas">
+
+			<ImageView
+					android:layout_width="88dp"
+					android:layout_height="wrap_content"
+					android:id="@+id/ivPhotoProfile"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentLeft="true"
+					android:layout_alignParentStart="true"
+					android:layout_alignTop="@+id/tvNama"
+					android:src="@drawable/avatar"
+					android:layout_marginRight="7dp"
+					android:scaleType="fitXY"
+					android:adjustViewBounds="true"
+					android:cropToPadding="true"
+					android:layout_above="@+id/tvNoHP"
+					android:paddingLeft="5dp"
+					android:paddingRight="5dp"/>
+
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="@string/txtNamaLengkap"
+					android:id="@+id/tvNama"
+					android:layout_alignParentTop="true"
+					android:layout_toRightOf="@+id/ivPhotoProfile"
+					android:layout_toEndOf="@+id/ivPhotoProfile"/>
+
+			<EditText
+					android:layout_width="match_parent"
+					android:layout_height="48dip"
+					android:ems="10"
+					android:id="@+id/etNama"
+					android:layout_below="@id/tvNama"
+					android:background="@drawable/rectroundgray"
+					android:layout_marginTop="8dp"
+					android:paddingLeft="10dip"
+					android:paddingRight="10dip"
+					android:singleLine="true"
+					android:maxLength="35"
+					android:inputType="textPersonName"
+					android:layout_toRightOf="@+id/ivPhotoProfile"
+					android:layout_toEndOf="@+id/ivPhotoProfile"/>
+
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="@string/HintInputHP"
+					android:layout_below="@id/etNama"
+					android:id="@+id/tvNoHP"
+					android:layout_marginTop="12dp"/>
+
+			<EditText
+					android:layout_width="match_parent"
+					android:layout_height="48dip"
+					android:ems="10"
+					android:id="@+id/etNoHP"
+					android:layout_below="@id/tvNoHP"
+					android:layout_alignParentLeft="true"
+					android:layout_alignParentStart="true"
+					android:background="@drawable/rectroundgray"
+					android:layout_marginTop="8dp"
+					android:paddingLeft="10dip"
+					android:paddingRight="10dip"
+					android:singleLine="true"
+					android:maxLength="16"
+					android:inputType="phone"/>
+
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="@string/HintInputEmail"
+					android:id="@+id/tvEmailAddr"
+					android:layout_below="@id/etNoHP"
+					android:layout_alignParentLeft="true"
+					android:layout_alignParentStart="true"
+					android:layout_marginTop="12dp"/>
+
+			<EditText
+					android:layout_width="match_parent"
+					android:layout_height="48dip"
+					android:ems="10"
+					android:id="@+id/etEmailAddr"
+					android:layout_below="@id/tvEmailAddr"
+					android:layout_alignParentLeft="true"
+					android:background="@drawable/rectroundgray"
+					android:layout_alignParentStart="true"
+					android:layout_marginTop="8dp"
+					android:paddingLeft="10dip"
+					android:paddingRight="10dip"
+					android:singleLine="true"
+					android:inputType="textEmailAddress"/>
+
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="@string/txtKomponen"
+					android:id="@+id/tvStatus"
+					android:layout_below="@id/etEmailAddr"
+					android:layout_alignParentLeft="true"
+					android:layout_alignParentStart="true"
+					android:layout_marginTop="12dip"/>
+
+			<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/rlStatus"
+					android:layout_below="@id/tvStatus"
+					android:layout_marginTop="10dip">
+
+				<RadioGroup
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:id="@+id/rgKomponen"
+						android:checkedButton="@+id/rbMurid">
+
+					<RadioButton
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/txtMurid"
+							android:id="@+id/rbMurid"
+							android:textSize="20dip"
+							android:singleLine="true"
+							android:checked="true"/>
+
+					<RadioButton
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/txtGuru"
+							android:id="@+id/rbGuru"
+							android:textSize="20dip"
+							android:layout_below="@+id/rbSingle"
+							android:singleLine="true"
+							android:layout_marginTop="5dp"/>
+
+					<RadioButton
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/txtWali"
+							android:id="@+id/rbWali"
+							android:textSize="20dip"
+							android:layout_below="@+id/rbMenikah"
+							android:singleLine="true"
+							android:layout_marginTop="5dp"/>
+				</RadioGroup>
+			</RelativeLayout>
+
+			<Button
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/txtLanjut"
+					android:id="@+id/btnLanjutProfile"
+					android:layout_below="@id/rlStatus"
+					android:layout_centerHorizontal="true"
+					android:background="@drawable/rectroundorange"
+					android:textColor="#FFFFFF"
+					android:layout_marginTop="30dip"
+					android:textSize="16dp"/>
+
+		</RelativeLayout>
+	</ScrollView>
+</FrameLayout>

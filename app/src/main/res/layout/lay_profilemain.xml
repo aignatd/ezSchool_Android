@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/back"
+		tools:context="id.co.devoxlabs.ezschool.profiles.ProfileMain">
+
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="40dp"
+			android:id="@+id/rlHeadEmail">
+		<include layout="@layout/lay_header"/>
+	</RelativeLayout>
+
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="@string/txtProfileEdit"
+			android:textColor="@color/WarnaAbsen3"
+			android:id="@+id/tvInfoPribadi"
+			android:gravity="center"
+			android:layout_below="@id/rlHeadEmail"
+			android:layout_marginLeft="15dp"
+			android:layout_marginRight="15dp"
+			android:layout_centerHorizontal="true"/>
+
+	<Button
+			android:layout_width="match_parent"
+			android:layout_height="12dp"
+			android:layout_below="@id/tvInfoPribadi"
+			android:layout_marginLeft="15dp"
+			android:layout_marginRight="15dp"
+			android:id="@+id/splitter"/>
+
+	<!-- <android.support.v4.view.ViewPager -->
+	<id.co.devoxlabs.ezschool.utils.CustomViewPager
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/pageProfile"
+			android:layout_centerHorizontal="true"
+			tools:context=".profiles.ProfileMain"
+			android:layout_alignLeft="@+id/rlHeader"
+			android:layout_alignRight="@+id/rlHeader"
+			android:layout_marginBottom="8dp"
+			android:layout_marginLeft="15dp"
+			android:layout_marginRight="15dp"
+			android:layout_marginTop="3dp"
+			android:layout_below="@id/splitter"/>
+</RelativeLayout>

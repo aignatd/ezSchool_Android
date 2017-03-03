@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/back"
+		tools:context="id.co.devoxlabs.ezschool.Utama">
+
+	<RelativeLayout
+			android:id="@+id/rlAll"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginLeft="30dp"
+			android:layout_marginRight="30dp">
+
+		<RelativeLayout
+				android:id="@+id/rlUtama"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingLeft="15dp"
+				android:paddingRight="15dp"
+				android:paddingTop="6dp"
+				android:paddingBottom="10dp"
+				android:background="@drawable/rectroundtrans">
+
+			<TextView
+					android:id="@+id/tvTitleLogin"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="false"
+					android:layout_alignParentTop="true"
+					android:layout_centerHorizontal="true"
+					android:gravity="center_vertical"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_alignParentEnd="false"
+					android:textSize="24dp"
+					android:textColor="@color/Black"
+					android:text="@string/TitleLogin"/>
+
+			<EditText
+					android:id="@+id/etHPEmail"
+					android:layout_width="match_parent"
+					android:layout_height="40dp"
+					android:layout_below="@id/tvTitleLogin"
+					android:layout_alignParentStart="true"
+					android:layout_marginTop="10dp"
+					android:paddingLeft="12dp"
+					android:paddingRight="12dp"
+					android:background="@drawable/rectroundwhitegray"
+					android:inputType="number"
+					android:ems="10"
+					android:layout_alignParentLeft="true"
+					android:textSize="16dp"
+					android:drawableLeft="@drawable/ic_account_black"
+					android:drawablePadding="5dp"
+					android:singleLine="true"
+					android:maxLength="15"
+					android:textColor="@color/Black"
+					android:hint="@string/HintInputHP"/>
+
+			<EditText
+					android:id="@+id/etPass"
+					android:layout_width="match_parent"
+					android:layout_height="40dp"
+					android:layout_below="@id/etHPEmail"
+					android:layout_alignParentStart="true"
+					android:layout_marginTop="10dp"
+					android:paddingLeft="12dp"
+					android:paddingRight="12dp"
+					android:background="@drawable/rectroundwhitegray"
+					android:inputType="textPassword"
+					android:ems="10"
+					android:layout_alignParentLeft="true"
+					android:textSize="16dp"
+					android:drawableLeft="@drawable/ic_lock_open_black"
+					android:drawablePadding="5dp"
+					android:singleLine="true"
+					android:maxLength="25"
+					android:textColor="@color/Black"
+					android:hint="@string/HintInputPass"/>
+
+			<Button
+					android:id="@+id/btnMasuk"
+					android:layout_width="match_parent"
+					android:layout_height="35dp"
+					android:layout_below="@id/etPass"
+					android:layout_centerHorizontal="true"
+					android:layout_marginLeft="8dp"
+					android:layout_marginRight="8dp"
+					android:layout_marginTop="20dp"
+					android:background="@drawable/rectroundorange"
+					android:textSize="16dp"
+					android:textColor="#ffffff"
+					android:text="@string/StrMasuk"/>
+		</RelativeLayout>
+
+		<LinearLayout
+				android:id="@+id/llGunakan"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/rlUtama"
+				android:layout_alignRight="@id/rlUtama"
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="12dp"
+				android:orientation="horizontal"
+				android:weightSum="6"
+				android:layout_alignLeft="@id/rlUtama">
+
+			<RelativeLayout
+					android:layout_width="wrap_content"
+					android:layout_height="20dp"
+					android:layout_weight="2.5">
+
+				<ImageView
+						android:id="@+id/imageView"
+						android:layout_width="80dp"
+						android:layout_height="1dp"
+						android:layout_centerInParent="true"
+						android:background="@color/Black"/>
+			</RelativeLayout>
+
+			<TextView
+					android:id="@+id/tvGunakan"
+					android:layout_width="wrap_content"
+					android:layout_height="20dp"
+					android:layout_weight="1"
+					android:gravity="center_horizontal"
+					android:textAppearance="?android:attr/textAppearanceSmall"
+					android:text="@string/StrGunakan"/>
+
+			<RelativeLayout
+					android:layout_width="wrap_content"
+					android:layout_height="20dp"
+					android:layout_weight="2.5">
+
+				<ImageView
+						android:id="@+id/imageView2"
+						android:layout_width="80dp"
+						android:layout_height="1dp"
+						android:layout_centerInParent="true"
+						android:background="@color/Black"/>
+			</RelativeLayout>
+		</LinearLayout>
+
+		<LinearLayout
+				android:id="@+id/llLain"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/llGunakan"
+				android:layout_alignRight="@+id/llGunakan"
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="12dp"
+				android:padding="8dp"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:background="@drawable/rectroundtrans"
+				android:layout_alignLeft="@+id/llGunakan">
+
+			<ImageView
+					android:id="@+id/ivEmail"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_gravity="center"
+					android:layout_marginRight="22dp"
+					android:background="@drawable/email"
+					android:scaleType="fitCenter"/>
+
+			<ImageView
+					android:id="@+id/ivGoogle"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_gravity="center"
+					android:layout_marginRight="22dp"
+					android:background="@drawable/google"/>
+
+			<ImageView
+					android:id="@+id/ivFacebook"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_gravity="center"
+					android:layout_marginRight="22dp"
+					android:background="@drawable/facebook"
+					android:scaleType="fitCenter"/>
+
+			<ImageView
+					android:id="@+id/ivTwitter"
+					android:visibility="gone"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_gravity="center"
+					android:background="@drawable/twitter"
+					android:scaleType="fitCenter"/>
+		</LinearLayout>
+	</RelativeLayout>
+
+
+	<TextView
+			android:id="@+id/tvBuatAkun"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginBottom="8dp"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:textColor="@color/WarnaVersi"
+			android:text="@string/StrBuatAkun"/>
+
+</RelativeLayout>

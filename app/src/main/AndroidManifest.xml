@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+					package="id.co.devoxlabs.ezschool">
+
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_SMS"/>
+	<uses-permission android:name="android.permission.RECEIVE_SMS"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.CAMERA"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+
+	<application
+			android:allowBackup="true"
+			android:icon="@mipmap/ic_launcher"
+			android:label="@string/app_name"
+			android:supportsRtl="true"
+			android:theme="@style/Ezschool">
+		<activity
+				android:name=".Splash"
+				android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity
+				android:name=".Utama"
+				android:screenOrientation="portrait">
+		</activity>
+		<activity
+				android:name=".Login"
+				android:screenOrientation="portrait">
+		</activity>
+		<activity
+				android:name=".login.EmailLogin"
+				android:screenOrientation="portrait">
+		</activity>
+		<activity
+				android:name=".BuatAkun"
+				android:screenOrientation="portrait">
+		</activity>
+		<activity
+				android:name=".selfie"
+				android:screenOrientation="portrait">
+		</activity>
+		<activity
+				android:name=".muridbaru.MuridBaru"
+				android:screenOrientation="portrait">
+		</activity>
+
+		<!-- Awal, Firebase messeging Services, by ignat 30102016 -->
+		<service android:name=".service.MyFirebaseMessagingService">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT"/>
+			</intent-filter>
+		</service>
+		<service android:name=".service.MyFirebaseInstanceIDService">
+			<intent-filter>
+				<action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+			</intent-filter>
+		</service>
+		<!-- Akhir, Firebase messeging Services, by ignat 30102016 -->
+
+
+		<!-- Awal, Facebook SDK, by ignat 12122016 -->
+		<meta-data
+				android:name="com.facebook.sdk.ApplicationId"
+				android:value="@string/facebook_app_id"/>
+
+		<activity
+				android:name="com.facebook.FacebookActivity"
+				android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+				android:label="@string/app_name"/>
+		<activity
+				android:name="com.facebook.CustomTabActivity"
+				android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+
+				<data android:scheme="@string/fb_login_protocol_scheme"/>
+			</intent-filter>
+		</activity>
+		<!-- Akhir, Facebook SDK, by ignat 12122016 -->
+
+
+		<!-- Awal, Twitter SDK, by ignat 22122016 -->
+		<meta-data
+				android:name="io.fabric.ApiKey"
+				android:value="ha9W0fbnWN4fsK1yjlWVZHTxQ"/>
+		<meta-data
+				android:name="com.crashlytics.ApiKey"
+				android:value="ha9W0fbnWN4fsK1yjlWVZHTxQ"/>
+		<!-- Akhir, Twitter SDK, by ignat 22122016 -->
+
+		<activity android:name=".AbsenQR">
+		</activity>
+		<activity android:name=".profiles.ProfileMain">
+		</activity>
+	</application>
+
+</manifest>
