@@ -150,7 +150,7 @@ public class ProsesData extends AppCompatActivity
 
               tvNamaTemp.setText(response.body().getUserResponse().getNama());
 
-              Picasso.with(context).load(response.body().getUserResponse().getPhoto()).networkPolicy(NetworkPolicy.NO_CACHE)
+              Picasso.with(context).load(response.body().getUserResponse().getPhotoURL()).networkPolicy(NetworkPolicy.NO_CACHE)
                   .memoryPolicy(MemoryPolicy.NO_CACHE)
                   .placeholder(ph)
                   .into(ivPhotoTemp);
