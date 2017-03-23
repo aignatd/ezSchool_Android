@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.co.devoxlabs.ezschool.data.DeviceData;
 import id.co.devoxlabs.ezschool.data.UserData;
-import id.co.devoxlabs.ezschool.kirim.ProsesData;
+import id.co.devoxlabs.ezschool.service.ProsesData;
 import id.co.devoxlabs.ezschool.utils.PesanPopup;
 import id.co.devoxlabs.ezschool.utils.fungsi;
 import org.apache.commons.codec.binary.Hex;

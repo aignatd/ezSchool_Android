@@ -82,6 +82,12 @@ public class WaliResponse
   @SerializedName("Jabatan")
   @Expose
   private String Jabatan;
+  @SerializedName("NOTELP")
+  @Expose
+  private String NOTELP;
+  @SerializedName("PhotoURL")
+  @Expose
+  private String photoURL;
 
   public String getPhoto()
   {
@@ -321,5 +327,25 @@ public class WaliResponse
   public void setJabatan(String jabatan)
   {
     Jabatan = jabatan;
+  }
+
+  public String getNOTELP()
+  {
+    return NOTELP;
+  }
+
+  public void setNOTELP(String NOTELP)
+  {
+    this.NOTELP = NOTELP;
+  }
+
+  public String getPhotoURL()
+  {
+    return photoURL;
+  }
+
+  public void setPhotoURL(String photoURL)
+  {
+    this.photoURL = photoURL;
   }
 }

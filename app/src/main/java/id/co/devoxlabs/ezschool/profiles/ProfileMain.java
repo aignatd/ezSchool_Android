@@ -3,25 +3,19 @@ package id.co.devoxlabs.ezschool.profiles;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.*;
+import android.widget.TextView;
 import id.co.devoxlabs.ezschool.R;
 import id.co.devoxlabs.ezschool.Utama;
-import id.co.devoxlabs.ezschool.data.CariProfile;
-import id.co.devoxlabs.ezschool.kirim.ProsesData;
-import id.co.devoxlabs.ezschool.service.DataService;
-import id.co.devoxlabs.ezschool.terima.UserTerima;
-import id.co.devoxlabs.ezschool.utils.*;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import id.co.devoxlabs.ezschool.utils.FragLifecycle;
+import id.co.devoxlabs.ezschool.utils.PesanPopup;
+import id.co.devoxlabs.ezschool.utils.Preference;
 
 import java.util.Locale;
 
@@ -172,7 +166,7 @@ public class ProfileMain extends AppCompatActivity implements View.OnClickListen
       finish();
     }
     else
-        mViewPager.setCurrentItem(0);
+      mViewPager.setCurrentItem(0);
   }
 
   public class SectionsProfile extends FragmentPagerAdapter

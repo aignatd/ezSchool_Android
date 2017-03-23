@@ -16,7 +16,7 @@ import android.widget.Spinner;
 import id.co.devoxlabs.ezschool.R;
 import id.co.devoxlabs.ezschool.data.*;
 import id.co.devoxlabs.ezschool.kirim.ProfileWali;
-import id.co.devoxlabs.ezschool.kirim.ProsesData;
+import id.co.devoxlabs.ezschool.service.ProsesData;
 import id.co.devoxlabs.ezschool.utils.*;
 
 import java.text.SimpleDateFormat;

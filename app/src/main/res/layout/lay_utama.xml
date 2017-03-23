@@ -32,13 +32,13 @@
 			 android:id="@+id/llProfile">
 
     <ImageView
-				android:layout_width="48dp"
 				android:layout_height="56dp"
 				android:id="@+id/ivProUtama"
 				android:src="@drawable/prefuser"
 				android:layout_marginRight="7dp"
 				android:layout_gravity="center_vertical"
-				android:scaleType="fitXY"/>
+				android:scaleType="fitXY"
+				android:layout_width="42dp"/>
 
 		 <LinearLayout
 				 android:orientation="vertical"

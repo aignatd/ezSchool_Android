@@ -64,6 +64,18 @@ public class MuridResponse
   @SerializedName("IdxAgama")
   @Expose
   private Integer IdxAgama;
+  @SerializedName("StatusPSB")
+  @Expose
+  private String statusPSB;
+  @SerializedName("TglDaftar")
+  @Expose
+  private String tglDaftar;
+  @SerializedName("Kelas")
+  @Expose
+  private String kelas;
+  @SerializedName("PhotoURL")
+  @Expose
+  private String photoURL;
 
   public String getPhoto()
   {
@@ -243,5 +255,45 @@ public class MuridResponse
   public void setIdxAgama(Integer idxAgama)
   {
     IdxAgama = idxAgama;
+  }
+
+  public String getStatusPSB()
+  {
+    return statusPSB;
+  }
+
+  public void setStatusPSB(String statusPSB)
+  {
+    this.statusPSB = statusPSB;
+  }
+
+  public String getTglDaftar()
+  {
+    return tglDaftar;
+  }
+
+  public void setTglDaftar(String tglDaftar)
+  {
+    this.tglDaftar = tglDaftar;
+  }
+
+  public String getKelas()
+  {
+    return kelas;
+  }
+
+  public void setKelas(String kelas)
+  {
+    this.kelas = kelas;
+  }
+
+  public String getPhotoURL()
+  {
+    return photoURL;
+  }
+
+  public void setPhotoURL(String photoURL)
+  {
+    this.photoURL = photoURL;
   }
 }

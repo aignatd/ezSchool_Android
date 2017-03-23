@@ -17,7 +17,7 @@ import id.co.devoxlabs.ezschool.data.DeviceData;
 import id.co.devoxlabs.ezschool.data.MuridData;
 import id.co.devoxlabs.ezschool.data.UserData;
 import id.co.devoxlabs.ezschool.kirim.ProfileMurid;
-import id.co.devoxlabs.ezschool.kirim.ProsesData;
+import id.co.devoxlabs.ezschool.service.ProsesData;
 import id.co.devoxlabs.ezschool.utils.*;
 
 import java.text.SimpleDateFormat;
@@ -88,11 +88,15 @@ public class fragProfileMurid extends Fragment implements View.OnClickListener, 
       {
         if(hasFocus)
         {
+          Log.d("", "");
+
           myDatePickerDialog dpMurid = new myDatePickerDialog(getContext(), dateandtimeMurid, new myDatePickerDialog.DatePickerListner()
           {
             @Override
             public void OnCancelButton(Dialog datedialog)
             {
+              Log.d("", "");
+
               datedialog.dismiss();
               etTmpLahirMurid.requestFocus();
             }
@@ -108,6 +112,8 @@ public class fragProfileMurid extends Fragment implements View.OnClickListener, 
               dateandtimeMurid.set(Calendar.DAY_OF_MONTH, c.get(Calendar.DAY_OF_MONTH));
               etTglLahirMurid.setText(new SimpleDateFormat("dd-MM-yyyy").format(c.getTime()));
               etTmpLahirMurid.requestFocus();
+
+              Log.d("","");
             }
           });
 

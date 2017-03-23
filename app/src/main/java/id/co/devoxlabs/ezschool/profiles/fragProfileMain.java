@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import android.widget.*;
 import id.co.devoxlabs.ezschool.R;
 import id.co.devoxlabs.ezschool.data.CariProfile;
-import id.co.devoxlabs.ezschool.kirim.ProsesData;
+import id.co.devoxlabs.ezschool.service.ProsesData;
 import id.co.devoxlabs.ezschool.selfie;
 import id.co.devoxlabs.ezschool.utils.*;
 

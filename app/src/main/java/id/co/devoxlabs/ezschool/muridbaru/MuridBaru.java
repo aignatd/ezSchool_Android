@@ -1,7 +1,5 @@
 package id.co.devoxlabs.ezschool.muridbaru;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,25 +9,43 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.co.devoxlabs.ezschool.R;
 import id.co.devoxlabs.ezschool.Utama;
+import id.co.devoxlabs.ezschool.data.CariProfile;
+import id.co.devoxlabs.ezschool.service.ProsesData;
 import id.co.devoxlabs.ezschool.utils.FragLifecycle;
-import id.co.devoxlabs.ezschool.utils.PesanPopup;
 import id.co.devoxlabs.ezschool.utils.Preference;
+import id.co.devoxlabs.ezschool.utils.fungsi;
 
 import java.util.Locale;
 
-public class MuridBaru extends AppCompatActivity implements View.OnClickListener
+public class MuridBaru extends AppCompatActivity
 {
   @BindView(R.id.tvHeader) TextView tvHeader;
   @BindView(R.id.ivNextIcon) ImageView ivNextIcon;
+  @BindView(R.id.ivOther) ImageView ivOther;
+  @BindView(R.id.rlWaliSiswa) RelativeLayout rlWaliSiswa;
 
   SectionsMuridBaru paMuridBaru;
   ViewPager vpMuridBaru;
+
+  private String strPhoto;
+
+  public String getStrPhoto()
+  {
+    return strPhoto;
+  }
+
+  public void setStrPhoto(String strPhoto)
+  {
+    this.strPhoto = strPhoto;
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState)
@@ -48,6 +64,9 @@ public class MuridBaru extends AppCompatActivity implements View.OnClickListener
 
     ivNextIcon.setImageResource(R.drawable.addmuridbaru);
     ivNextIcon.setVisibility(View.VISIBLE);
+
+    ivOther.setImageResource(R.drawable.ic_refresh_white);
+    ivOther.setVisibility(View.VISIBLE);
 
     paMuridBaru = new SectionsMuridBaru(getSupportFragmentManager());
     vpMuridBaru = (ViewPager) findViewById(R.id.cvpMuridBaru);
@@ -71,11 +90,16 @@ public class MuridBaru extends AppCompatActivity implements View.OnClickListener
       {
         FragLifecycle fragmentToShow = (FragLifecycle) paMuridBaru.instantiateItem(vpMuridBaru, position);
         fragmentToShow.onResumeMuridBaru();
+
+        if(position == 0)
+          rlWaliSiswa.setVisibility(View.VISIBLE);
+        else
+          rlWaliSiswa.setVisibility(View.GONE);
       }
     });
   }
 
-  @OnClick(R.id.ivBackIcon)
+  @OnClick({R.id.ivBackIcon, R.id.ivOther, R.id.ivNextIcon, R.id.ivDetailWali, R.id.ivPhotoWali})
   public void onClick(View view)
   {
     switch(view.getId())
@@ -83,7 +107,26 @@ public class MuridBaru extends AppCompatActivity implements View.OnClickListener
       case R.id.ivBackIcon:
         BackActivity();
       break;
+      case R.id.ivOther:
+        if(vpMuridBaru.getCurrentItem() == 0)
+          RefreshListPSB(view);
+      break;
+      case R.id.ivDetailWali:
+      case R.id.ivPhotoWali:
+        vpMuridBaru.setCurrentItem(1);
+      break;
     }
+  }
+
+  private void RefreshListPSB(View view)
+  {
+    CariProfile.initCariProfile();
+    CariProfile.getInstance().setCariProfile(fungsi.getStringFromSharedPref(this, Preference.PrefUserHP));
+    CariProfile.getInstance().setKodeDevice(fungsi.DeviceInfo(this, 0));
+    CariProfile.getInstance().setParamID(2);
+
+    ListView lvPSB = (ListView) vpMuridBaru.findViewById(R.id.lvMuridBaru);
+    ProsesData.ListDataPSB(lvPSB, this, MuridBaru.this);
   }
 
   @Override
@@ -94,9 +137,14 @@ public class MuridBaru extends AppCompatActivity implements View.OnClickListener
 
   private void BackActivity()
   {
-    Intent MuridBaruIntent = new Intent(MuridBaru.this, Utama.class);
-    startActivity(MuridBaruIntent);
-    finish();
+    if (vpMuridBaru.getCurrentItem() == 0)
+    {
+      Intent MuridBaruIntent = new Intent(MuridBaru.this, Utama.class);
+      startActivity(MuridBaruIntent);
+      finish();
+    }
+    else
+      vpMuridBaru.setCurrentItem(0);
   }
 
   public class SectionsMuridBaru extends FragmentPagerAdapter

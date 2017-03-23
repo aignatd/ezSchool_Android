@@ -16,17 +16,19 @@
 package id.co.devoxlabs.ezschool.service;
 
 import id.co.devoxlabs.ezschool.data.CariProfile;
-import id.co.devoxlabs.ezschool.kirim.*;
-import id.co.devoxlabs.ezschool.terima.GuruTerima;
-import id.co.devoxlabs.ezschool.terima.MuridTerima;
-import id.co.devoxlabs.ezschool.terima.UserTerima;
-import id.co.devoxlabs.ezschool.terima.WaliTerima;
+import id.co.devoxlabs.ezschool.kirim.LoginHolder;
+import id.co.devoxlabs.ezschool.kirim.ProfileGuru;
+import id.co.devoxlabs.ezschool.kirim.ProfileMurid;
+import id.co.devoxlabs.ezschool.kirim.ProfileWali;
+import id.co.devoxlabs.ezschool.terima.*;
 import id.co.devoxlabs.ezschool.utils.FixValue;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.http.*;
+import retrofit2.http.Body;
+import retrofit2.http.Multipart;
+import retrofit2.http.POST;
+import retrofit2.http.Part;
 
 /**
  * Dibuat oleh : ignat
@@ -59,18 +61,21 @@ public interface DataService
   @POST(FixValue.ProfileUser)
   Call<UserTerima> UpdateWaliService(@Body ProfileWali pwData);
 
-  @POST(FixValue.ParaProWali)
+  @POST(FixValue.ParamProWali)
   Call<WaliTerima> CekProfileWali(@Body ProfileWali cpwData);
 
-  @POST(FixValue.ParaProGuru)
+  @POST(FixValue.ParamProGuru)
   Call<GuruTerima> CekProfileGuru(@Body ProfileGuru cpgData);
 
-  @POST(FixValue.ParaProMurid)
+  @POST(FixValue.ParamProMurid)
   Call<MuridTerima> CekProfileMurid(@Body ProfileMurid cpmData);
 
   @Multipart
-  @POST(FixValue.UploadPhoto)
+  @POST(FixValue.UploadPhotoProfile)
   Call<UserTerima> UploadPhotoService(@Part("Komponen") RequestBody rbKomponen, @Part("Handphone") RequestBody rbNoHP,
                                       @Part MultipartBody.Part Photo, @Part("KodeDevice") RequestBody rbKodeDevice);
+
+  @POST(FixValue.ParamProfile)
+  Call<PSBTerima> AmbilDataPSB(@Body CariProfile cpmDataPSB);
 }
 

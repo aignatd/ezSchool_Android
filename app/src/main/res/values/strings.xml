@@ -60,6 +60,7 @@
 	<string name="txtProsesLogout">Proses logout akun</string>
 	<string name="txtProsesProfile">Proses profile user</string>
 	<string name="txtProsesGantiPass">Proses ganti password</string>
+	<string name="txtProsesPSB">Proses data siswa baru</string>
 
 	<string name="strNomorID">Nomor ID</string>
 	<string name="HintNomorID">Masukan Nomor ID</string>
@@ -79,13 +80,13 @@
 	<string name="txtNamaLengkap">Nama Lengkap <font color='red'>*</font></string>
 	<string name="txtAlamat">Alamat <font color='red'>*</font></string>
 	<string name="txtKomponen">Komponen Sekolah <font color='red'>*</font></string>
-	<string name="txtMurid">Murid</string>
+	<string name="txtMurid">Siswa</string>
 	<string name="txtGuru">Guru</string>
-	<string name="txtWali">Orang tua / Wali Murid</string>
+	<string name="txtWali">Orang tua / Wali Siswa</string>
 	<string name="txtLanjut">Selanjutnya</string>
 
 	<string name="txtProfileMain">ProfileMain</string>
-	<string name="txtProfileMurid">ProfileMurid</string>
+	<string name="txtProfileMurid">ProfileSiswa</string>
 	<string name="txtProfileGuru">ProfileGuru</string>
 	<string name="txtProfileWali">ProfileWali</string>
 
@@ -142,19 +143,18 @@
 	<string name="txtBatalPhoto">Photo profile batal</string>
 	<string name="txtPilihPhoto">Pilih Photo</string>
 
-	<string name="mapHandphone">Handphone</string>
-	<string name="mapPassword">Password</string>
-	<string name="mapEmail">Email</string>
-	<string name="mapIdxKomponen">IdxKomponen</string>
-	<string name="mapKomponen">Komponen</string>
-	<string name="mapLoginID">LoginID</string>
-	<string name="mapNama">Nama</string>
-	<string name="mapPassbaru">Passbaru</string>
+	<string name="HintWali">Orang tua / Wali Siswa :</string>
+	<string name="HintNama">Calon Siswa :</string>
+	<string name="HintTglDaftar">Tgl. daftar :</string>
+	<string name="HintSeks">Jenis kelamin :</string>
+	<string name="HintTglLahir">Tgl. lahir :</string>
+	<string name="HintKelas">Kelas :</string>
+	<string name="HintStatus">Status :</string>
 
 	<string name="PhotoKosong">Photo tidak ada</string>
-	<string name="txtMuridBaru">Data murid baru yang sudah anda daftarkan. Update informasi terbaru akan muncul secara otomatis.</string>
-	<string name="txtHeadMuridBaru">Murid Baru</string>
+	<string name="txtMuridBaru">Data Siswa baru yang sudah anda daftarkan. Update informasi terbaru akan muncul secara otomatis.</string>
+	<string name="txtHeadMuridBaru">Siswa Baru</string>
 
 	<string name="txtDataWali">Data Wali</string>
-	<string name="txtDataMurid">Data Murid</string>
+	<string name="txtDataMurid">Data Siswa</string>
 </resources>

@@ -43,7 +43,7 @@ public class PesanPopup extends Activity
     alert.show();
   }
 
-  public void TampilPesan2(final Context context, String strMsg, final Class<?> cls)
+  public void TampilPesan2(final Context context, String strMsg, final Activity act, final Class<?> cls)
   {
     AlertDialog.Builder builder = new AlertDialog.Builder(context);
     builder
@@ -57,7 +57,7 @@ public class PesanPopup extends Activity
 					{
 						Intent intent = new Intent(context, cls);
 						context.startActivity(intent);
-						finish();
+						act.finish();
 					}
 				})
 				.setNegativeButton(R.string.strBtnBatal, new DialogInterface.OnClickListener()

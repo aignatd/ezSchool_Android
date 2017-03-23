@@ -16,9 +16,10 @@ import android.support.v7.view.menu.MenuPopupHelper;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.ViewFlipper;
+import android.widget.*;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -28,11 +29,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
-import id.co.devoxlabs.ezschool.data.*;
-import id.co.devoxlabs.ezschool.kirim.ProsesData;
+import id.co.devoxlabs.ezschool.data.CariProfile;
+import id.co.devoxlabs.ezschool.data.DeviceData;
+import id.co.devoxlabs.ezschool.data.SigninData;
+import id.co.devoxlabs.ezschool.data.UserData;
 import id.co.devoxlabs.ezschool.muridbaru.MuridBaru;
 import id.co.devoxlabs.ezschool.popup.GantiPassword;
 import id.co.devoxlabs.ezschool.profiles.ProfileMain;
+import id.co.devoxlabs.ezschool.service.ProsesData;
 import id.co.devoxlabs.ezschool.utils.FixValue;
 import id.co.devoxlabs.ezschool.utils.PesanPopup;
 import id.co.devoxlabs.ezschool.utils.Preference;
@@ -41,70 +45,62 @@ import id.co.devoxlabs.ezschool.utils.fungsi;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Utama extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener
+public class Utama extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener
 {
+  @BindView(R.id.ivBackIcon) ImageView ivBackIcon;
+  @BindView(R.id.tvHeader) TextView tvHeader;
+  @BindView(R.id.ivNextIcon) ImageView ivNextIcon;
+  @BindView(R.id.ivProUtama) ImageView ivProUtama;
+  @BindView(R.id.tvNamaUtama) TextView tvNamaUtama;
+  @BindView(R.id.tvNoHpUtama) TextView tvNoHpUtama;
+  @BindView(R.id.llProfile) LinearLayout llProfile;
+  @BindView(R.id.rlProfile) RelativeLayout rlProfile;
+  @BindView(R.id.tvAbsen) TextView tvAbsen;
+  @BindView(R.id.tvPSB) TextView tvPSB;
+  @BindView(R.id.vfAbsen) ViewFlipper vfAbsen;
+  @BindView(R.id.vfPSB) ViewFlipper vfPSB;
+
   private String TAG = "[Utama]";
   private ProgressDialog progressDialog;
   private Context context = this;
   private PesanPopup pesan = new PesanPopup();
   private Activity activity = this;
-  private List<String> lstLogin = new ArrayList<>();;
+  private List<String> lstLogin = new ArrayList<>();
 
   List<String> lstLogout;
-
-  private ImageView ivBackIcon, ivNextIcon, ivProUtama;
-  private TextView tvHeader, tvNoHpUtama, tvNamaUtama;
 
   private GoogleApiClient mGoogleApiClient;
   private String strKomponen = "";
 
-  private ViewFlipper vfAbsen;
-  private ViewFlipper vfPSB;
-
   int[] imgAbsen = {R.drawable.qrcodelands, R.drawable.qrcodeteks};
   int[] imgPSB = {R.drawable.psb, R.drawable.psbteks};
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.lay_utama);
+  @Override
+  protected void onCreate(Bundle savedInstanceState)
+  {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.lay_utama);
+    ButterKnife.bind(this);
 
     lstLogout = new ArrayList<>();
-		BindingView();
+    BindingView();
     BindingSlide();
-	}
+  }
 
   private void BindingView()
   {
-    findViewById(R.id.tvAbsen).setOnClickListener(this);
-    findViewById(R.id.tvPSB).setOnClickListener(this);
-    findViewById(R.id.rlProfile).setOnClickListener(this);
-    findViewById(R.id.llProfile).setOnClickListener(this);
-
-    ivBackIcon = (ImageView) findViewById(R.id.ivBackIcon);
     ivBackIcon.setImageResource(R.drawable.ic_home_orange);
 
-    tvHeader = (TextView) findViewById(R.id.tvHeader);
     tvHeader.setVisibility(View.VISIBLE);
     tvHeader.setText(R.string.srtDashboard);
 
-    ivNextIcon = (ImageView) findViewById(R.id.ivNextIcon);
     ivNextIcon.setVisibility(View.VISIBLE);
     ivNextIcon.setImageResource(R.drawable.ic_list_menu);
-    ivNextIcon.setOnClickListener(this);
-
-    ivProUtama = (ImageView) findViewById(R.id.ivProUtama);
-    tvNamaUtama = (TextView) findViewById(R.id.tvNamaUtama);
-    tvNoHpUtama = (TextView) findViewById(R.id.tvNoHpUtama);
   }
 
   private void BindingSlide()
   {
-    vfAbsen = (ViewFlipper) findViewById(R.id.vfAbsen);
-    vfAbsen.setOnClickListener(this);
-
-    for (int i=0; i<imgAbsen.length; i++)
+    for(int i = 0; i < imgAbsen.length; i++)
     {
       ImageView ivFlipper = new ImageView(Utama.this);
       ivFlipper.setImageResource(imgAbsen[i]);
@@ -115,12 +111,9 @@ public class Utama extends AppCompatActivity implements View.OnClickListener, Go
     vfAbsen.setFlipInterval(15000);
     vfAbsen.startFlipping();
 
-    vfPSB = (ViewFlipper) findViewById(R.id.vfPSB);
-    vfPSB.setOnClickListener(this);
-
-    for (int j=0; j<imgPSB.length; j++)
+    for(int j = 0; j < imgPSB.length; j++)
     {
-      Log.d("","");
+      Log.d("", "");
 
       ImageView ivFlipper = new ImageView(Utama.this);
       ivFlipper.setImageResource(imgPSB[j]);
@@ -132,11 +125,11 @@ public class Utama extends AppCompatActivity implements View.OnClickListener, Go
     vfPSB.startFlipping();
   }
 
-	@Override
-	public void onClick(View view)
-	{
-		switch (view.getId())
-		{
+  @OnClick({R.id.ivNextIcon, R.id.vfAbsen, R.id.tvAbsen, R.id.llProfile, R.id.rlProfile, R.id.vfPSB, R.id.tvPSB})
+  public void onClick(View view)
+  {
+    switch(view.getId())
+    {
       case R.id.ivNextIcon:
         MenuBuilder menuBuilder = new MenuBuilder(context);
 
@@ -150,15 +143,15 @@ public class Utama extends AppCompatActivity implements View.OnClickListener, Go
           @Override
           public boolean onMenuItemSelected(MenuBuilder menu, MenuItem menuItem)
           {
-            switch (menuItem.getItemId())
+            switch(menuItem.getItemId())
             {
               case R.id.mnuProfile:
                 EditProfile();
-              return true;
+                return true;
               case R.id.mnuRubahPass:
                 GantiPassword cdMenuHome = new GantiPassword(Utama.this);
                 cdMenuHome.show();
-              return true;
+                return true;
               case R.id.mnuLogout:
                 switch(fungsi.getIntFromSharedPref(context, Preference.PrefJenisLogin))
                 {
@@ -183,42 +176,43 @@ public class Utama extends AppCompatActivity implements View.OnClickListener, Go
                           }
                         })
                         .setNegativeButton(R.string.strBtnBatal, new DialogInterface.OnClickListener()
-                        {
-                          public void onClick(DialogInterface dialog, int id)
-                          {
-                            dialog.dismiss();
-                          }
-                        }
-                     );
+                            {
+                              public void onClick(DialogInterface dialog, int id)
+                              {
+                                dialog.dismiss();
+                              }
+                            }
+                        );
 
                     AlertDialog alert = builder.create();
                     alert.show();
-                  break;
+                    break;
                   case 2:
                   case 4:
                   case 5:
                     pesan.TampilPesan5(context, getResources().getString(R.string.AppLogout), Login.class);
-                  break;
+                    break;
                   case 3:
                     LogoutGmail();
-                  break;
+                    break;
                 }
 
-              return true;
+                return true;
             }
 
             return false;
           }
 
           @Override
-          public void onMenuModeChange(MenuBuilder menu) {
+          public void onMenuModeChange(MenuBuilder menu)
+          {
           }
         });
 
         MenuPopupHelper menuHelper = new MenuPopupHelper(context, menuBuilder, ivNextIcon);
         menuHelper.setForceShowIcon(true); // show icons!!!!!!!!
         menuHelper.show();
-       break;
+        break;
       case R.id.vfAbsen:
       case R.id.tvAbsen:
         if(StatusProfile() && (strKomponen.matches(getResources().getString(R.string.txtMurid))))
@@ -227,11 +221,11 @@ public class Utama extends AppCompatActivity implements View.OnClickListener, Go
           startActivity(AbsenMuridIntent);
           finish();
         }
-      break;
+        break;
       case R.id.rlProfile:
       case R.id.llProfile:
         EditProfile();
-      break;
+        break;
       case R.id.vfPSB:
       case R.id.tvPSB:
         if(StatusProfile())
@@ -243,8 +237,8 @@ public class Utama extends AppCompatActivity implements View.OnClickListener, Go
             finish();
           }
         }
-		}
-	}
+    }
+  }
 
   @Override
   public void onBackPressed()
@@ -300,7 +294,7 @@ public class Utama extends AppCompatActivity implements View.OnClickListener, Go
     if(fungsi.getIntFromSharedPref(this, Preference.PrefJenisLogin) >= 2)
     {
       FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-      if (user != null)
+      if(user != null)
       {
         name = user.getDisplayName();
         email = user.getEmail();
@@ -314,14 +308,13 @@ public class Utama extends AppCompatActivity implements View.OnClickListener, Go
         boolean emailVerified = user.isEmailVerified();
 
         Picasso.with(context).load(photoUrl.toString()).networkPolicy(NetworkPolicy.NO_CACHE)
-          .memoryPolicy(MemoryPolicy.NO_CACHE)
-          .placeholder(R.drawable.prefuser)
-          .into(ivProUtama);
+            .memoryPolicy(MemoryPolicy.NO_CACHE)
+            .placeholder(R.drawable.prefuser)
+            .into(ivProUtama);
 
         strCari = email;
       }
-    }
-    else
+    }else
     {
       tvNamaUtama.setText(fungsi.getStringFromSharedPref(context, Preference.PrefUsername));
       tvNoHpUtama.setText(fungsi.getStringFromSharedPref(context, Preference.PrefUserHP));

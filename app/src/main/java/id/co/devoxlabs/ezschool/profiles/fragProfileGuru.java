@@ -17,7 +17,7 @@ import id.co.devoxlabs.ezschool.data.DeviceData;
 import id.co.devoxlabs.ezschool.data.GuruData;
 import id.co.devoxlabs.ezschool.data.UserData;
 import id.co.devoxlabs.ezschool.kirim.ProfileGuru;
-import id.co.devoxlabs.ezschool.kirim.ProsesData;
+import id.co.devoxlabs.ezschool.service.ProsesData;
 import id.co.devoxlabs.ezschool.utils.*;
 
 import java.text.SimpleDateFormat;

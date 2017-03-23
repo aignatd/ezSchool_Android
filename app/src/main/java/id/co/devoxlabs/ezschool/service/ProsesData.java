@@ -1,10 +1,9 @@
-package id.co.devoxlabs.ezschool.kirim;
+package id.co.devoxlabs.ezschool.service;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.*;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
@@ -12,13 +11,14 @@ import com.squareup.picasso.Picasso;
 import id.co.devoxlabs.ezschool.Login;
 import id.co.devoxlabs.ezschool.R;
 import id.co.devoxlabs.ezschool.Utama;
+import id.co.devoxlabs.ezschool.adapter.DataPSBAdapter;
 import id.co.devoxlabs.ezschool.data.*;
+import id.co.devoxlabs.ezschool.kirim.LoginHolder;
+import id.co.devoxlabs.ezschool.kirim.ProfileGuru;
+import id.co.devoxlabs.ezschool.kirim.ProfileMurid;
+import id.co.devoxlabs.ezschool.kirim.ProfileWali;
 import id.co.devoxlabs.ezschool.profiles.ProfileMain;
-import id.co.devoxlabs.ezschool.service.DataService;
-import id.co.devoxlabs.ezschool.terima.GuruTerima;
-import id.co.devoxlabs.ezschool.terima.MuridTerima;
-import id.co.devoxlabs.ezschool.terima.UserTerima;
-import id.co.devoxlabs.ezschool.terima.WaliTerima;
+import id.co.devoxlabs.ezschool.terima.*;
 import id.co.devoxlabs.ezschool.utils.FixValue;
 import id.co.devoxlabs.ezschool.utils.PesanPopup;
 import id.co.devoxlabs.ezschool.utils.Preference;
@@ -44,6 +44,7 @@ import java.util.concurrent.TimeUnit;
 public class ProsesData extends AppCompatActivity
 {
   static ProgressDialog progressDialog;
+  static String TAG = "[prosesData]";
 
   public static DataService BindingData()
   {
@@ -153,6 +154,7 @@ public class ProsesData extends AppCompatActivity
               Picasso.with(context).load(response.body().getUserResponse().getPhotoURL()).networkPolicy(NetworkPolicy.NO_CACHE)
                   .memoryPolicy(MemoryPolicy.NO_CACHE)
                   .placeholder(ph)
+                  .fit()
                   .into(ivPhotoTemp);
 
               fungsi.storeToSharedPref(context, response.body().getUserResponse().getKomponen(), Preference.PrefKomponen);
@@ -636,5 +638,61 @@ public class ProsesData extends AppCompatActivity
       }
     });
   }
-}
 
+  public static void ListDataPSB(final ListView lvPSB, final Context context, final Activity activity)
+  {
+    DataService glData = BindingData();
+
+    progressDialog = ProgressDialog.show(context, context.getResources().getString(R.string.txtTunggu), context.getResources().getString(R.string.txtProsesPSB));
+    progressDialog.setCancelable(false);
+
+    if(fungsi.isNetworkAvailable(context) == FixValue.TYPE_NONE)
+    {
+      progressDialog.dismiss();
+      ShowPesan(null, null, context, activity.getResources().getString(R.string.txtNoKoneksi));
+      return;
+    }
+
+    final Call<PSBTerima> cld = glData.AmbilDataPSB(CariProfile.getInstance());
+    cld.enqueue(new Callback<PSBTerima>()
+    {
+      @Override
+      public void onResponse(Call<PSBTerima> call, Response<PSBTerima> response)
+      {
+        progressDialog.dismiss();
+
+        if(response.isSuccessful())
+        {
+          if(response.body().getCoreResponse().getKode().matches(FixValue.ErrorUser))
+            ShowPesan(null, null, context, response.body().getCoreResponse().getPesan());
+          else
+          {
+            ImageView ivPhotoWali = (ImageView) activity.findViewById(R.id.ivPhotoWali);
+            Picasso.with(context).load(response.body().getWaliResponse().getPhotoURL()).networkPolicy(NetworkPolicy.NO_CACHE)
+              .memoryPolicy(MemoryPolicy.NO_CACHE)
+              .placeholder(R.drawable.muridbaru)
+              .fit()
+              .rotate(90f)
+              .into(ivPhotoWali);
+
+            TextView tvNamaWali = (TextView) activity.findViewById(R.id.tvNamaWali);
+            tvNamaWali.setText(response.body().getWaliResponse().getWALIMURID());
+            TextView tvNoHPWali = (TextView) activity.findViewById(R.id.tvNoHPWali);
+            tvNoHPWali.setText(response.body().getWaliResponse().getNOTELP());
+            TextView tvAlamatWali = (TextView) activity.findViewById(R.id.tvAlamatWali);
+            tvAlamatWali.setText(response.body().getWaliResponse().getALAMAT());
+
+            DataPSBAdapter AdaptPSB = new DataPSBAdapter(context, response.body().getMuridResponse());
+            lvPSB.setAdapter(AdaptPSB);
+          }
+        }
+      }
+
+      @Override
+      public void onFailure(Call<PSBTerima> call, Throwable t)
+      {
+        progressDialog.dismiss();
+      }
+    });
+  }
+}

@@ -11,11 +11,8 @@ public class FixValue
 	public static final String TitleFCM = "School Application";
 	public static final String FolderDoc = "/ezSchool";
 
-	public static final String Host = "http://192.168.16.2:31013/api/v1/";
-//	public static final String Host = "http://192.168.30.40:31013/api/v1/";
-//	public static final String Host = "http://192.168.137.1:31013/api/v1/";
-//	public static final String Host = "http://192.168.191.2:31013/api/v1/";
-//	public static final String Host = "http://172.19.1.71:31013/api/v1/";
+	public static final String Host = "http://192.168.30.17:31013/api/v1/";
+	//public static final String Host = "http://172.19.1.71:31013/api/v1/";
 
 	public static final String ParamLogin = "users/login";
 	public static final String ParamBuatAkun = "users/registrasi";
@@ -23,11 +20,10 @@ public class FixValue
 	public static final String ParamProfile = "users/profile";
 	public static final String ProfileUser = "users/rubah";
 	public static final String ProfilePass = "users/password";
-	public static final String ParaProWali = "wali/profile";
-	public static final String ParaProGuru = "guru/profile";
-	public static final String ParaProMurid = "murid/profile";
-	public static final String UploadPhoto = "users/upload";
-	public static final String DownloadPhoto = "users/download";
+	public static final String ParamProWali = "wali/profile";
+	public static final String ParamProGuru = "guru/profile";
+	public static final String ParamProMurid = "murid/profile";
+	public static final String UploadPhotoProfile = "users/upload";
 
 	public static final int TimeoutKoneksi = 45000;
   public static final int TYPE_NONE = 0;

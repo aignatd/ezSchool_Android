@@ -35,17 +35,102 @@
 			android:layout_marginRight="15dp"
 			android:id="@+id/splitter"/>
 
+	<RelativeLayout
+			android:id="@+id/rlWaliSiswa"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:background="@color/WarnaAbsen2"
+			android:layout_below="@id/splitter"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="10dp">
+
+		<LinearLayout
+				android:id="@+id/llDetailMurid"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="5dp"
+				android:orientation="horizontal"
+				android:paddingTop="3dp"
+				android:paddingBottom="3dp">
+
+			<ImageView
+					android:id="@+id/ivPhotoWali"
+					android:layout_width="61dp"
+					android:layout_gravity="center"
+					android:scaleType="fitXY"
+					android:src="@drawable/muridbaru"
+					android:adjustViewBounds="true"
+					android:cropToPadding="false"
+					android:layout_marginLeft="5dp"
+					android:paddingLeft="5dp"
+					android:layout_height="60dp"
+					android:paddingRight="7dp"/>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical">
+
+				<TextView
+						android:id="@+id/tvHintWali"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="left|center_vertical"
+						android:textSize="12sp"
+						android:text="@string/HintWali"
+						android:layout_marginBottom="3dp"/>
+
+				<TextView
+						android:id="@+id/tvNamaWali"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="left|center_vertical"
+						android:textSize="12sp"
+						android:text="TextView"
+						android:layout_marginBottom="3dp"/>
+
+				<TextView
+						android:id="@+id/tvNoHPWali"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="left|center_vertical"
+						android:textSize="12sp"
+						android:text="TextView"
+						android:layout_marginBottom="3dp"/>
+
+				<TextView
+						android:id="@+id/tvAlamatWali"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="left|center_vertical"
+						android:textSize="12sp"
+						android:text="TextView"/>
+			</LinearLayout>
+
+			<ImageView
+					android:id="@+id/ivDetailWali"
+					android:layout_width="20dp"
+					android:layout_height="40dp"
+					android:layout_gravity="center"
+					android:paddingLeft="7dp"
+					android:paddingTop="7dp"
+					android:paddingBottom="7dp"
+					android:src="@drawable/information"
+					android:layout_marginRight="3dp"/>
+
+		</LinearLayout>
+	</RelativeLayout>
+
 	<!-- <android.support.v4.view.ViewPager -->
 	<id.co.devoxlabs.ezschool.utils.CustomViewPager
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:id="@+id/cvpMuridBaru"
-			android:layout_centerHorizontal="true"
-			android:layout_alignLeft="@+id/rlHeader"
-			android:layout_alignRight="@+id/rlHeader"
+			android:layout_below="@+id/rlWaliSiswa"
+			android:layout_marginTop="8dp"
 			android:layout_marginBottom="8dp"
 			android:layout_marginLeft="10dp"
-			android:layout_marginRight="10dp"
-			android:layout_marginTop="3dp"
-			android:layout_below="@id/splitter"/>
+			android:layout_marginRight="10dp"/>
 </RelativeLayout>

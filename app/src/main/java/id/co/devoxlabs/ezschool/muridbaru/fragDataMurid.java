@@ -16,7 +16,7 @@ import id.co.devoxlabs.ezschool.data.DeviceData;
 import id.co.devoxlabs.ezschool.data.MuridData;
 import id.co.devoxlabs.ezschool.data.UserData;
 import id.co.devoxlabs.ezschool.kirim.ProfileMurid;
-import id.co.devoxlabs.ezschool.kirim.ProsesData;
+import id.co.devoxlabs.ezschool.service.ProsesData;
 import id.co.devoxlabs.ezschool.profiles.ProfileMain;
 import id.co.devoxlabs.ezschool.utils.*;
 

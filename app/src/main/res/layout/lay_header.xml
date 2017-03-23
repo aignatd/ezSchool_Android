@@ -20,7 +20,7 @@
             android:layout_marginBottom="5dip"
             android:layout_alignParentBottom="false"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dip"
+            android:layout_marginLeft="7dip"
             android:layout_marginRight="5dip"
             android:src="@drawable/ic_left_orange"
             android:scaleType="fitXY"/>
@@ -39,16 +39,28 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/ivNextIcon"
+            android:id="@+id/ivOther"
             android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:layout_marginTop="5dip"
             android:layout_marginLeft="5dip"
             android:layout_marginBottom="5dip"
-            android:layout_marginRight="10dip"
-            android:src="@drawable/backbutton"
+            android:layout_toLeftOf="@+id/ivNextIcon"
+            android:src="@drawable/ic_refresh_white"
             android:visibility="gone"/>
 
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/ivNextIcon"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginBottom="5dip"
+            android:layout_marginRight="7dp"
+            android:src="@drawable/backbutton"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 </LinearLayout>

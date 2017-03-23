@@ -10,7 +10,7 @@ import android.widget.EditText;
 import id.co.devoxlabs.ezschool.R;
 import id.co.devoxlabs.ezschool.data.DeviceData;
 import id.co.devoxlabs.ezschool.data.UserData;
-import id.co.devoxlabs.ezschool.kirim.ProsesData;
+import id.co.devoxlabs.ezschool.service.ProsesData;
 import id.co.devoxlabs.ezschool.utils.PesanPopup;
 import id.co.devoxlabs.ezschool.utils.Preference;
 import id.co.devoxlabs.ezschool.utils.fungsi;
